@@ -1,2 +1,5 @@
-﻿  Modelo_SFML.vcxproj -> C:\Users\thiagorh\Desktop\Modelo_SFML\x64\Debug\Modelo_SFML.exe
-  Modelo_SFML.vcxproj -> C:\Users\thiagorh\Desktop\Modelo_SFML\x64\Debug\Modelo_SFML.pdb (Partial PDB)
+﻿  main.cpp
+  State.cpp
+  StateMachine.cpp
+  Gerando Código...
+  Modelo_SFML.vcxproj -> D:\GitProjects\SFMLSocketProject\Modelo_SFML\x64\Debug\Modelo_SFML.exe
