@@ -1,8 +1,9 @@
 #include <iostream>
 #include "Game.h"
+#include "DEFINITIONS.h"
 
 int main() 
 {
-	Game(800, 600, "SFML Starter");
+	Game(SCREEN_WIDTH, SCREEN_HEIGHT, "TikTakToe");
 	return 0;
 }

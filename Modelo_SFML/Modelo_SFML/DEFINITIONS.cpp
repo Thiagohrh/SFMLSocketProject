@@ -1,0 +1,12 @@
+#include "DEFINITIONS.h"
+
+
+
+DEFINITIONS::DEFINITIONS()
+{
+}
+
+
+DEFINITIONS::~DEFINITIONS()
+{
+}
