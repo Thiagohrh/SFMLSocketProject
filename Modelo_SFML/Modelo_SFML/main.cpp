@@ -4,6 +4,6 @@
 
 int main() 
 {
-	Game(SCREEN_WIDTH, SCREEN_HEIGHT, "TikTakToe");
+	Game game(SCREEN_WIDTH, SCREEN_HEIGHT, "TikTakToe");
 	return 0;
 }

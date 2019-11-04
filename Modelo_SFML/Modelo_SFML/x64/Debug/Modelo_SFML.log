@@ -1,28 +1,2 @@
-﻿  AssetManager.cpp
-  DEFINITIONS.cpp
-  Game.cpp
-  InputManager.cpp
-d:\gitprojects\sfmlsocketproject\modelo_sfml\modelo_sfml\inputmanager.cpp(19): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-d:\gitprojects\sfmlsocketproject\modelo_sfml\modelo_sfml\inputmanager.cpp(18): warning C4244: 'argumento': conversão de 'const T' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-  main.cpp
-  SplashState.cpp
-  State.cpp
-  StateMachine.cpp
-  Gerando Código...
+﻿  Game.cpp
   Modelo_SFML.vcxproj -> D:\GitProjects\SFMLSocketProject\Modelo_SFML\x64\Debug\Modelo_SFML.exe
