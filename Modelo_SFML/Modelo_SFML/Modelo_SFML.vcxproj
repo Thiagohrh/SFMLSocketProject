@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BC711625-DC34-4CD0-B5DF-C45B68129D7B}</ProjectGuid>
     <RootNamespace>ModeloSFML</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -136,6 +136,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMachine.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
