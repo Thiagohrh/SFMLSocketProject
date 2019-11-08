@@ -1,7 +1,13 @@
-﻿  main.cpp
+﻿  DEFINITIONS.cpp
+  Game.cpp
+  GameState.cpp
+  main.cpp
+  MainMenuState.cpp
+d:\gitprojects\sfmlsocketproject\modelo_sfml\modelo_sfml\mainmenustate.cpp(36): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+  SplashState.cpp
   Gerando código
-  121 of 125 functions (96.8%) were compiled, the rest were copied from previous compilation.
-    9 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  30 of 462 functions ( 6.5%) were compiled, the rest were copied from previous compilation.
+    6 functions were new in current compilation
+    24 functions had inline decision re-evaluated but remain unchanged
   Finalizada a geração de código
   Modelo_SFML.vcxproj -> D:\GitProjects\SFMLSocketProject\Modelo_SFML\x64\Release\Modelo_SFML.exe
