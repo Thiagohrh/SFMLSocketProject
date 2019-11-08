@@ -3,6 +3,9 @@
 #include <iostream>
 
 #include "DEFINITIONS.h"
+
+#include "MainMenuState.h"
+
 SplashState::SplashState(GameDataRef data) : _data(data)
 {
 
@@ -36,7 +39,7 @@ void SplashState::Update(float dt)
 	if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
 	{
 		//Here, after a few seconds, change it to another state.
-		std::cout << "Go to main menu \n";
+		this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
 	}
 }
 
