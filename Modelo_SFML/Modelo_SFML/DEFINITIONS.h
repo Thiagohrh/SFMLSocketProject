@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
 #define SCREEN_WIDTH 768
 #define SCREEN_HEIGHT 1136
@@ -36,6 +37,9 @@
 #define STATE_AI_PLAYING 93
 #define STATE_DRAW 92
 
+#define PLAYER_ONE_ID 0
+#define PLAYER_ONE_SPAWN_X 0
+#define PLAYER_ONE_SPAWN_Y 0
 
 class DEFINITIONS
 {

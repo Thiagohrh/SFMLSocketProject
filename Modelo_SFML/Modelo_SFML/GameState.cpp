@@ -26,6 +26,9 @@ void GameState::Init()
 
 	_pauseButton.setPosition(this->_data->window.getSize().x - _pauseButton.getLocalBounds().width,
 		_pauseButton.getPosition().x);
+
+	//Also starts the SpaceShip(Player) of the game
+	Player = new SpaceShip(_data, PLAYER_ONE_ID);
 }
 
 void GameState::HandleInput()
@@ -47,6 +50,7 @@ void GameState::HandleInput()
 
 void GameState::Update(float dt)
 {
+	this->Player->Update(dt);
 }
 
 void GameState::Draw(float dt)
@@ -55,6 +59,7 @@ void GameState::Draw(float dt)
 
 	this->_data->window.draw(this->_background);
 	this->_data->window.draw(this->_pauseButton);
+	this->Player->Draw();
 
 	this->_data->window.display();
 }

@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "State.h"
 #include "Game.h"
+#include "SpaceShip.h"
 class GameState :public State
 {
 public:
@@ -22,5 +23,6 @@ private:
 	int turn;
 	int gameState;
 
+	SpaceShip *Player;
 };
 
