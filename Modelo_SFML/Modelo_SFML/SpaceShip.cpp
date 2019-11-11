@@ -1,5 +1,6 @@
 #include "SpaceShip.h"
 #include "DEFINITIONS.h"
+#include <sstream>
 #include <math.h>
 
 SpaceShip::SpaceShip()
@@ -72,6 +73,7 @@ void SpaceShip::InitShape()
 	this->shape.setPosition(sf::Vector2f(this->_data->window.getSize().x / 2,
 		this->_data->window.getSize().y / 2));
 	this->shape.setOrigin(sf::Vector2f(50.f,50.f));
+	this->shape.setTexture(&_data->assets.GetTexture("Spaceship"));
 }
 
 void SpaceShip::SetPosition(sf::Vector2f position)

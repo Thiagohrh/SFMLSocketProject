@@ -23,6 +23,8 @@
 #define X_WINNING_PIECE_FILEPATH "Resources/res/X Win.png"
 #define O_WINNING_PIECE_FILEPATH "Resources/res/O Win.png"
 
+#define SPACESHIP_FILEPATH "Resources/sprites/SpaceShip1.png"
+
 #define X_PIECE 8
 #define O_piece 0
 #define EMPTY_PIECE -1

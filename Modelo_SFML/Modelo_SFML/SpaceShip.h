@@ -20,6 +20,10 @@ public:
 	//functions to work online.
 	void SetPosition(sf::Vector2f position);
 	sf::Vector2f GetPosition();
+	sf::Texture GetSprite() 
+	{
+		return shape.getTexture();
+	};
 
 private:
 	GameDataRef _data;

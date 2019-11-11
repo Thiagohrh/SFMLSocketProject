@@ -2,6 +2,7 @@
 #include "GameState.h"
 #include "DEFINITIONS.h"
 #include <iostream>
+#include "Collision.h"
 
 GameState::GameState()
 {
@@ -26,7 +27,7 @@ void GameState::Init()
 
 	_pauseButton.setPosition(this->_data->window.getSize().x - _pauseButton.getLocalBounds().width,
 		_pauseButton.getPosition().x);
-
+	this->_data->assets.LoadTexture("Spaceship", SPACESHIP_FILEPATH);
 	//Also starts the SpaceShip(Player) of the game
 	Player1 = new SpaceShip(_data, PLAYER_ONE_ID);
 	Player2 = new SpaceShip(_data, PLAYER_TWO_ID);
@@ -80,6 +81,16 @@ void GameState::Update(float dt)
 	{
 		Player2->SetPosition(opponentPosition);
 	}
+
+	//This method of testing collisions only works when
+	//recieving two SPRITES. Not textures... So the 
+	//starships will need to be adjusted acoordingly.
+	//or the method of collision detection will need to be
+	//different.
+	/*if (Collision::PixelPerfectTest())
+	{
+
+	}*/
 }
 
 void GameState::Draw(float dt)
