@@ -13,8 +13,8 @@ SpaceShip::~SpaceShip()
 
 SpaceShip::SpaceShip(GameDataRef data, int player_id) : _data(data)
 {
-	InitShape();
 	playerID = player_id;
+	InitShape();
 }
 
 void SpaceShip::Init()
@@ -60,9 +60,31 @@ void SpaceShip::Draw()
 
 void SpaceShip::InitShape()
 {
-	this->shape.setFillColor(sf::Color::Green);
+	if (playerID == PLAYER_ONE_ID)
+	{
+		this->shape.setFillColor(sf::Color::Blue);
+	}
+	else
+	{
+		this->shape.setFillColor(sf::Color::Red);
+	}
 	this->shape.setSize(sf::Vector2f(100.f, 100.f));
 	this->shape.setPosition(sf::Vector2f(this->_data->window.getSize().x / 2,
 		this->_data->window.getSize().y / 2));
 	this->shape.setOrigin(sf::Vector2f(50.f,50.f));
+}
+
+void SpaceShip::SetPosition(sf::Vector2f position)
+{
+	if (playerID != PLAYER_TWO_ID)
+		return;
+	this->shape.setPosition(position);
+}
+
+sf::Vector2f SpaceShip::GetPosition()
+{
+	sf::Vector2f position;
+	position.x = shape.getPosition().x;
+	position.y = shape.getPosition().y;
+	return position;
 }

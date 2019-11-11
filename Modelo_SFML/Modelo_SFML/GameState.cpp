@@ -28,7 +28,11 @@ void GameState::Init()
 		_pauseButton.getPosition().x);
 
 	//Also starts the SpaceShip(Player) of the game
-	Player = new SpaceShip(_data, PLAYER_ONE_ID);
+	Player1 = new SpaceShip(_data, PLAYER_ONE_ID);
+	Player2 = new SpaceShip(_data, PLAYER_TWO_ID);
+
+	//setting this for easier usability.
+	socket = _data->network.GetSocket();
 }
 
 void GameState::HandleInput()
@@ -45,12 +49,37 @@ void GameState::HandleInput()
 		{
 			std::cout << "Pause game!";
 		}
+		if (event.type == sf::Event::GainedFocus)
+			gameFocused = true;
+		if (event.type == sf::Event::LostFocus)
+			gameFocused = false;
 	}
 }
 
 void GameState::Update(float dt)
 {
-	this->Player->Update(dt);
+	if (gameFocused)
+	{
+		this->Player1->Update(dt);
+		this->Player2->Update(dt);
+	}
+	//for the connection!
+	sf::Packet packet;
+
+	sf::Vector2f playerPosition;
+	playerPosition = Player1->GetPosition();
+
+	packet << playerPosition.x <<
+		playerPosition.y;
+	this->socket->send(packet);
+	//In order to recieve the info from whatever connected here...
+	this->socket->receive(packet);
+	sf::Vector2f opponentPosition;
+
+	if (packet >> opponentPosition.x >> opponentPosition.y)
+	{
+		Player2->SetPosition(opponentPosition);
+	}
 }
 
 void GameState::Draw(float dt)
@@ -59,7 +88,8 @@ void GameState::Draw(float dt)
 
 	this->_data->window.draw(this->_background);
 	this->_data->window.draw(this->_pauseButton);
-	this->Player->Draw();
+	this->Player1->Draw();
+	this->Player2->Draw();
 
 	this->_data->window.display();
 }

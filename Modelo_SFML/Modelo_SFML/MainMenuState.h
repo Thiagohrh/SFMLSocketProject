@@ -20,5 +20,9 @@ private:
 	sf::Sprite _playButton;
 	sf::Sprite _playButtonOuter;
 	sf::Sprite _title;
+
+	//In order to set the connection type...
+	sf::Sprite _server;
+	sf::Sprite _client;
 };
 

@@ -34,7 +34,17 @@ void MainMenuState::Init()
 
 	this->_title.setPosition((SCREEN_WIDTH / 2) - this->_title.getGlobalBounds().width / 2,
 		this->_title.getGlobalBounds().height * 0.1);
+	//Setting up the buttons to handle the type of connection...
+	this->_data->assets.LoadTexture("Server Button", MAIN_MENU_SERVER_BUTTON);
+	this->_data->assets.LoadTexture("Client Button", MAIN_MENU_CLIENT_BUTTON);
 
+	this->_server.setTexture(this->_data->assets.GetTexture("Server Button"));
+	this->_client.setTexture(this->_data->assets.GetTexture("Client Button"));
+
+	this->_server.setPosition((SCREEN_WIDTH / 3) - this->_server.getGlobalBounds().width / 2,
+		((SCREEN_HEIGHT / 1.5) - this->_server.getGlobalBounds().height / 2));
+	this->_client.setPosition((SCREEN_WIDTH / 1.5) - this->_client.getGlobalBounds().width / 2,
+		((SCREEN_HEIGHT / 1.5) - this->_server.getGlobalBounds().height / 2));
 }
 
 void MainMenuState::HandleInput()
@@ -49,6 +59,20 @@ void MainMenuState::HandleInput()
 		if (this->_data->input.IsSpriteClicked(this->_playButton,
 			sf::Mouse::Left, this->_data->window))
 		{
+			this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+		}
+
+		//Setting the inner workings of teh server and client buttons...
+		if (this->_data->input.IsSpriteClicked(this->_server,
+			sf::Mouse::Left, this->_data->window))
+		{
+			this->_data->network.SetIfServer(true);
+			this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+		}
+		if (this->_data->input.IsSpriteClicked(this->_client,
+			sf::Mouse::Left, this->_data->window))
+		{
+			this->_data->network.SetIfServer(false);
 			this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 		}
 	}
@@ -66,6 +90,8 @@ void MainMenuState::Draw(float dt)
 	this->_data->window.draw(this->_playButton);
 	this->_data->window.draw(this->_playButtonOuter);
 	this->_data->window.draw(this->_title);
+	this->_data->window.draw(this->_client);
+	this->_data->window.draw(this->_server);
 
 	this->_data->window.display();
 }

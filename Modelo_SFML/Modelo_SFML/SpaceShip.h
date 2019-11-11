@@ -17,6 +17,9 @@ public:
 	void Draw();
 
 	void InitShape();
+	//functions to work online.
+	void SetPosition(sf::Vector2f position);
+	sf::Vector2f GetPosition();
 
 private:
 	GameDataRef _data;

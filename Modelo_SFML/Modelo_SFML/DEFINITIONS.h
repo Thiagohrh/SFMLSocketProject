@@ -41,6 +41,14 @@
 #define PLAYER_ONE_SPAWN_X 0
 #define PLAYER_ONE_SPAWN_Y 0
 
+#define PLAYER_TWO_ID 1
+#define PLAYER_TWO_SPAWN_X 0
+#define PLAYER_TWO_SPAWN_Y 0
+
+//buttons to set the connection type
+#define MAIN_MENU_CLIENT_BUTTON "Resources/res/button_client.png"
+#define MAIN_MENU_SERVER_BUTTON "Resources/res/button_server.png"
+
 class DEFINITIONS
 {
 public:

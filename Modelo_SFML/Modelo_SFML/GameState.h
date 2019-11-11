@@ -3,6 +3,8 @@
 #include "State.h"
 #include "Game.h"
 #include "SpaceShip.h"
+#include "NetworkManager.h"
+#include <SFML/Network.hpp>
 class GameState :public State
 {
 public:
@@ -23,6 +25,10 @@ private:
 	int turn;
 	int gameState;
 
-	SpaceShip *Player;
+	SpaceShip *Player1, *Player2;
+
+	//main used socket.
+	sf::TcpSocket *socket;
+	bool gameFocused = true;
 };
 
