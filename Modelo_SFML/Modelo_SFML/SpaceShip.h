@@ -20,9 +20,10 @@ public:
 	//functions to work online.
 	void SetPosition(sf::Vector2f position);
 	sf::Vector2f GetPosition();
-	sf::Texture GetSprite() 
+	sf::Sprite* GetSprite() 
 	{
-		return shape.getTexture();
+		//return shape.getTexture();
+		return &spike;
 	};
 
 private:
@@ -31,5 +32,6 @@ private:
 	//Kindda like an area that holds a sprite, collision, and movement system.
 	sf::RectangleShape shape;
 	float MovementSpeed = 10.f; 
+	sf::Sprite spike;
 };
 

@@ -2,7 +2,7 @@
 #include "GameState.h"
 #include "DEFINITIONS.h"
 #include <iostream>
-#include "Collision.h"
+//#include "Collision.h"
 
 GameState::GameState()
 {
@@ -80,7 +80,13 @@ void GameState::Update(float dt)
 	if (packet >> opponentPosition.x >> opponentPosition.y)
 	{
 		Player2->SetPosition(opponentPosition);
+
 	}
+	//Reference for a collision class
+	//https://www.youtube.com/watch?v=g5hFOANHjlQ
+
+	//se player1->getspikesprite colidiu with player2->getballon();.....
+
 
 	//This method of testing collisions only works when
 	//recieving two SPRITES. Not textures... So the 
